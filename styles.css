@@ -180,19 +180,19 @@ body {
     border-top: 2px solid #f00;
 }
 
-.social {
+.social_media {
     display: flex;
     justify-content: center;
     gap: 20px;
     margin: 20px 0;
 }
 
-.social a {
+.social_media a {
     color: #fff;
     font-size: 1.5rem;
     transition: 0.3s;
 }
 
-.social a:hover {
+.social_media a:hover {
     color: #f00;
 }
