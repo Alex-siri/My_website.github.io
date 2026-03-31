@@ -74,17 +74,87 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+    // Hero Typewriter
+    const heroTitle = document.getElementById('hero-title');
+    if (heroTitle) {
+        const textToType = "FORGE YOUR LEGACY";
+        let index = 0;
+        
+        function typeHero() {
+            if (index < textToType.length) {
+                let htmlStr = "";
+                for (let i = 0; i <= index; i++) {
+                    if (i === 11) htmlStr += "<span>";
+                    htmlStr += textToType[i];
+                    if (i === index && i >= 11) htmlStr += "</span>";
+                }
+                heroTitle.innerHTML = htmlStr;
+                index++;
+                setTimeout(typeHero, 150); // Speed of typing
+            }
+        }
+        setTimeout(typeHero, 300); // initial delay
+    }
+
     // Scroll Animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: "0px 0px -50px 0px"
     };
 
+    // Prepare Typewriter Elements
+    const typeElements = document.querySelectorAll('.typewrite-text');
+    typeElements.forEach(el => {
+        // Fix height so layout doesn't jump
+        const rect = el.getBoundingClientRect();
+        if(rect.height > 0) el.style.minHeight = rect.height + 'px';
+        
+        el.dataset.originalHtml = el.innerHTML;
+        el.innerHTML = '';
+    });
+
+    function typeWriterHTML(element, htmlString, index = 0) {
+        if (index === 0) {
+            element.innerHTML = '';
+        }
+
+        let isTag = false;
+        let currentString = element.dataset.currentTyping || '';
+
+        function type() {
+            if (index < htmlString.length) {
+                let char = htmlString.charAt(index);
+                currentString += char;
+                if (char === '<') isTag = true;
+                if (char === '>') isTag = false;
+                
+                element.innerHTML = htmlString.substring(0, index + 1);
+                
+                index++;
+                if (isTag) {
+                    type();
+                } else {
+                    setTimeout(type, 10); // Very fast typing
+                }
+            } else {
+                 element.style.minHeight = 'auto'; // restore
+            }
+        }
+        type();
+    }
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show');
-                observer.unobserve(entry.target); // Animation plays once
+                
+                if (entry.target.classList.contains('typewrite-text') && !entry.target.dataset.typed) {
+                    entry.target.dataset.typed = 'true';
+                    typeWriterHTML(entry.target, entry.target.dataset.originalHtml);
+                }
+
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);

@@ -3,8 +3,7 @@
     --bg-nav: #ffffff;
     --bg-card: #ffffff;
     --text-main: #111;
-    --accent: #e60000; /* slightly darker/brighter red for light theme */
-    --secondary: #d49800; /* slightly darker gold for contrast */
+    --accent: #e60000; /* Gold */ /* slightly darker/brighter red for light theme */ /* slightly darker gold for contrast */
     --btn-text: #fff;
     --input-border: #ccc;
 }
@@ -14,8 +13,7 @@ body.dark-mode {
     --bg-nav: #111;
     --bg-card: #111;
     --text-main: #fff;
-    --accent: #f00;    /* Primary Red */
-    --secondary: #ffb700; /* Gold Accent */
+    --accent: #f00; /* Bright Gold */    /* Primary Red */ /* Gold Accent */
     --btn-text: #000;
     --input-border: #333;
 }
@@ -92,6 +90,7 @@ body {
 
 .menu a:hover {
     color: var(--accent);
+    transform: translateY(-2px);
 }
 
 /* Hero Section */
@@ -127,13 +126,13 @@ body {
     font-weight: bold;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     margin-top: 20px;
 }
 
 .btn:hover {
-    transform: scale(1.05);
-    background: var(--secondary);
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3); /* Uses a red shadow tint for accent */
 }
 
 /* Sections */
@@ -167,6 +166,11 @@ body {
     flex-direction: row-reverse;
 }
 
+.mission-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
 .mission-text {
     flex: 1.2;
     text-align: justify;
@@ -182,8 +186,9 @@ body {
 }
 
 .mission-image img {
-    width: 100%;
-    max-width: 450px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    max-width: 100%;
+    height: auto;
     border-radius: 10px;
     border: 3px solid var(--accent);
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
@@ -218,9 +223,9 @@ body {
 .person {
     background: var(--bg-card);
     padding: 30px;
-    border-radius: 5px;
+    border-radius: 15px;
     text-align: center;
-    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
     border-bottom: 3px solid var(--accent);
 }
 
@@ -230,6 +235,9 @@ body.light-mode .person {
 
 .person:hover {
     transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    border-color: var(--accent);
+    background-color: rgba(255, 0, 0, 0.05);
 }
 
 .person img {
@@ -293,4 +301,118 @@ body.light-mode .person {
 
 .social a:hover {
     color: var(--accent);
+}
+
+
+.person:hover h3, .person:hover i {
+    color: var(--accent) !important;
+    transition: color 0.4s ease;
+}
+
+/* Split Layout for Sections */
+.split-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 50px;
+    flex-direction: row-reverse;
+}
+
+.split-cards {
+    flex: 1.2;
+}
+
+.team-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.split-text {
+    flex: 1;
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 20px;
+    border-right: 4px solid var(--accent);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 900px) {
+    .split-layout {
+        flex-direction: column;
+    }
+    .split-text {
+        border-left: none;
+        border-top: 4px solid var(--accent);
+        margin-top: 30px;
+    }
+}
+
+.team-cards .person {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 30px;
+    padding: 20px 30px;
+}
+
+.team-cards .person img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 0;
+}
+
+.team-cards .person > i {
+    margin-bottom: 0 !important;
+    font-size: 2.5rem !important;
+    width: 60px;
+    text-align: center;
+}
+
+.team-cards .person div, .team-cards .person .content-wrapper {
+    flex: 1;
+}
+
+.team-cards .person button.btn {
+    margin-top: 0;
+}
+
+@media (max-width: 650px) {
+    .team-cards .person {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .team-cards .person img {
+        margin: 0 auto 15px auto;
+    }
+}
+
+
+/* Shrink Membership boxes */
+.plan-layout .team-cards .person {
+    padding: 15px 25px;
+    gap: 15px;
+}
+.plan-layout .team-cards .person h2 {
+    font-size: 2rem !important;
+}
+
+/* Additional overrides for tighter plan boxes */
+.plan-layout .team-cards .person {
+    padding: 15px 20px !important;
+    gap: 10px !important;
+}
+.plan-layout .team-cards .person h3 {
+    margin-bottom: 5px !important;
+    font-size: 1.3rem !important;
+}
+.plan-layout .team-cards .person p {
+    margin-bottom: 5px !important;
+    font-size: 0.95rem !important;
+}
+.plan-layout .team-cards .person > i {
+    font-size: 2rem !important;
 }
