@@ -11,7 +11,7 @@
 <body>
     <div class="top">
         <div class="logo">Alex<span>Gym</span></div>
-        <a href="#" id="theme-toggle" class="theme-toggle-btn"><i class="fas fa-sun"></i></a>
+        <a href="#" id="theme-toggle" class="theme-toggle-btn"><i class="fas fa-moon"></i></a>
     </div>
     
     <nav class="menu">
@@ -30,41 +30,48 @@
         <button class="btn">START YOUR JOURNEY</button>
     </section>
     
-    <div class="box" id="mission">
+    <div class="box animate-on-scroll" id="mission">
         <h2 class="title">OUR <span>MISSION</span></h2>
-        <p class="mission">At Alex Gym, we believe fitness should be accessible to everyone, regardless of age, gender, or fitness level. Our mission is to empower individuals to take control of their health through personalized training programs that deliver real, measurable results.
+        
+        <div class="mission-row">
+            <div class="mission-text">
+                <p>At Alex Gym, we believe fitness should be accessible to everyone, regardless of age, gender, or fitness level. Our mission is to empower individuals to take control of their health through personalized training programs that deliver real, measurable results.<br><br>With 10+ years of combined experience, our trainers have helped hundreds of clients transform their bodies and lives. We stay current with the latest fitness research to ensure our methods are both effective and safe.</p>
+            </div>
+            <div class="mission-image">
+                <img src="website_photos/pic2.jpeg" alt="Our Facility">
+            </div>
+        </div>
 
-With over 10+ years of combined experience, our trainers have helped hundreds of clients transform their bodies and lives. We stay current with the latest fitness research to ensure our methods are both effective and safe.
-
-We are committed to creating a supportive and motivating environment where every member feels welcomed, respected, and encouraged to grow. Whether you are just starting your fitness journey or striving to reach peak performance, we provide the guidance and structure needed to help you succeed.
-
-Our approach focuses on more than just physical transformation — we promote long-term lifestyle changes, mental resilience, and overall well-being. We emphasize proper technique, consistency, and discipline to ensure sustainable progress rather than short-term results.
-
-We believe in accountability and community. Through expert coaching and a results-driven system, we help our members stay on track, overcome challenges, and build confidence both inside and outside the gym.
-
-At Alex Gym, fitness is not just about working out — it’s about building a stronger, healthier, and more confident version of yourself.
-</p>
+        <div class="mission-row reverse">
+            <div class="mission-text">
+                <p>We are committed to creating a supportive and motivating environment where every member feels welcomed, respected, and encouraged to grow. Whether you are just starting your fitness journey or striving to reach peak performance, we provide the guidance and structure needed to help you succeed.<br><br>Our approach focuses on more than just physical transformation — we promote long-term lifestyle changes, mental resilience, and overall well-being. We emphasize proper technique, consistency, and discipline to ensure sustainable progress.</p>
+            </div>
+            <div class="mission-image">
+                <img src="website_photos/pic1" alt="Our Community">
+            </div>
+        </div>
+    </div>
     </div>
     
-    <div class="box" id="plans">
+    <div class="box animate-on-scroll" id="plans">
         <h2 class="title">WORKOUT <span>PLANS</span></h2>
         <div class="team">
-            <div class="person">
-                <i class="fas fa-dumbbell" style="font-size: 3rem; color: var(--accent); margin-bottom: 20px;"></i>
+            <div class="person animate-on-scroll">
+                <i class="fas fa-dumbbell" style="font-size: 3rem; color: var(--secondary); margin-bottom: 20px;"></i>
                 <h3>Beginner</h3>
                 <p style="margin-bottom: 5px;"><strong>Duration:</strong> 4 Weeks</p>
                 <p style="margin-bottom: 5px;"><strong>Difficulty:</strong> Easy</p>
                 <p>Focus on form, mobility, and foundation.</p>
             </div>
-            <div class="person">
-                <i class="fas fa-fire" style="font-size: 3rem; color: var(--accent); margin-bottom: 20px;"></i>
+            <div class="person animate-on-scroll">
+                <i class="fas fa-fire" style="font-size: 3rem; color: var(--secondary); margin-bottom: 20px;"></i>
                 <h3>Intermediate</h3>
                 <p style="margin-bottom: 5px;"><strong>Duration:</strong> 8 Weeks</p>
                 <p style="margin-bottom: 5px;"><strong>Difficulty:</strong> Medium</p>
                 <p>Push past plateaus for serious muscle gain.</p>
             </div>
-            <div class="person">
-                <i class="fas fa-bolt" style="font-size: 3rem; color: var(--accent); margin-bottom: 20px;"></i>
+            <div class="person animate-on-scroll">
+                <i class="fas fa-bolt" style="font-size: 3rem; color: var(--secondary); margin-bottom: 20px;"></i>
                 <h3>Advanced</h3>
                 <p style="margin-bottom: 5px;"><strong>Duration:</strong> 12 Weeks</p>
                 <p style="margin-bottom: 5px;"><strong>Difficulty:</strong> Hard</p>
@@ -73,17 +80,17 @@ At Alex Gym, fitness is not just about working out — it’s about building a s
         </div>
     </div>
 
-    <div class="box" id="membership">
+    <div class="box animate-on-scroll" id="membership">
         <h2 class="title">MEMBERSHIP <span>PLANS</span></h2>
         <div class="team">
-            <div class="person">
+            <div class="person animate-on-scroll">
                 <h3>Basic</h3>
                 <h2 style="font-size: 2.5rem; margin: 15px 0; color: var(--text-main);">$29<span style="font-size: 1rem; color: var(--text-main); opacity: 0.7;">/mo</span></h2>
                 <p style="margin-bottom: 10px;">✔ Gym Access 24/7</p>
                 <p style="margin-bottom: 20px;">✔ Basic Equipment</p>
                 <button class="btn">Choose Plan</button>
             </div>
-            <div class="person" style="border: 2px solid var(--accent); transform: scale(1.05);">
+            <div class="person animate-on-scroll" style="border: 2px solid var(--accent); transform: scale(1.05);">
                 <div style="background: var(--accent); color: var(--btn-text); font-weight: bold; width: fit-content; margin: -45px auto 20px; padding: 5px 15px; border-radius: 20px;">Most Popular</div>
                 <h3>Standard</h3>
                 <h2 style="font-size: 2.5rem; margin: 15px 0; color: var(--text-main);">$49<span style="font-size: 1rem; color: var(--text-main); opacity: 0.7;">/mo</span></h2>
@@ -91,7 +98,7 @@ At Alex Gym, fitness is not just about working out — it’s about building a s
                 <p style="margin-bottom: 20px;">✔ Unlimited Classes</p>
                 <button class="btn">Choose Plan</button>
             </div>
-            <div class="person">
+            <div class="person animate-on-scroll">
                 <h3>Premium</h3>
                 <h2 style="font-size: 2.5rem; margin: 15px 0; color: var(--text-main);">$89<span style="font-size: 1rem; color: var(--text-main); opacity: 0.7;">/mo</span></h2>
                 <p style="margin-bottom: 10px;">✔ Unlimited Classes</p>
@@ -101,22 +108,22 @@ At Alex Gym, fitness is not just about working out — it’s about building a s
         </div>
     </div>
 
-    <div class="box" id="trainers">
+    <div class="box animate-on-scroll" id="trainers">
         <h2 class="title">MEET OUR <span>TRAINERS</span></h2>
         <div class="team">
-            <div class="person">
+            <div class="person animate-on-scroll">
                 <img src="website_photos/alex.jpg" alt="ales">
                 <h3>Alex</h3>
                 <p>Strength & Conditioning</p>
                 <p>10+ years experience</p>
             </div>
-            <div class="person">
+            <div class="person animate-on-scroll">
                 <img src="website_photos/wed_muzey.jpg" alt="website">
                 <h3>Wed Muzey</h3>
                 <p>Yoga & Mobility</p>
                 <p>RYT 500 Certified</p>
             </div>
-            <div class="person">
+            <div class="person animate-on-scroll">
                 <img src="website_photos/yoni.png" alt="yoni">
                 <h3>Yonas</h3>
                 <p>Nutrition & Wellness</p>
@@ -125,22 +132,22 @@ At Alex Gym, fitness is not just about working out — it’s about building a s
         </div>
     </div>
     
-    <div class="box" id="success">
+    <div class="box animate-on-scroll" id="success">
         <h2 class="title">SUCCESS <span>STORIES</span></h2>
         <div class="team">
-            <div class="person">
+            <div class="person animate-on-scroll">
                 <img src="website_photos/jorda.jpg" alt="jorda">
                 <h3>Jordanos Tesfay</h3>
                 <p>From couch to 5K</p>
                 <p>"I never thought I could run, now I can’t stop!"</p>
             </div>
-            <div class="person">
+            <div class="person animate-on-scroll">
                 <img src="website_photos/sam.jpg" alt="sam">
                 <h3>Samuel Girmay</h3>
                 <p>Competitive powerlifter</p>
                 <p>"From beginner to champion"</p>
             </div>
-            <div class="person">
+            <div class="person animate-on-scroll">
                 <img src="website_photos/niyat.jpg" alt="niyat">
                 <h3>Niyat Selomon</h3>
                 <p>Lost 50lbs in 6 months</p>
@@ -149,7 +156,7 @@ At Alex Gym, fitness is not just about working out — it’s about building a s
         </div>
     </div>
     
-    <div class="box" id="contact">
+    <div class="box animate-on-scroll" id="contact">
         <h2 class="title">GET IN <span>TOUCH</span></h2>
         <div class="form">
             <input type="text" placeholder="Your Name">
