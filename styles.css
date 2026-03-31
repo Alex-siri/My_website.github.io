@@ -1,3 +1,23 @@
+:root {
+    --bg-body: #000;
+    --bg-nav: #111;
+    --bg-card: #111;
+    --text-main: #fff;
+    --accent: #f00;
+    --btn-text: #000;
+    --input-border: #333;
+}
+
+body.light-mode {
+    --bg-body: #f5f5f5;
+    --bg-nav: #ffffff;
+    --bg-card: #ffffff;
+    --text-main: #111;
+    --accent: #e60000; /* slightly darker/brighter red for light theme */
+    --btn-text: #fff;
+    --input-border: #ccc;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,19 +26,24 @@
 }
 
 body {
-    background: #000;
-    color: #fff;
+    background: var(--bg-body);
+    color: var(--text-main);
     line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
 }
 
 /* Header */
 .top {
-    background: #000;
-    padding: 15px 0;
+    background: var(--bg-body);
+    padding: 15px 20px;
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 2px solid #f00;
+    border-bottom: 2px solid var(--accent);
+    transition: background 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo {
@@ -28,7 +53,20 @@ body {
 }
 
 .logo span {
-    color: #f00;
+    color: var(--accent);
+}
+
+.theme-toggle-btn {
+    position: absolute;
+    right: 20px;
+    color: var(--text-main);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--accent);
 }
 
 /* Navigation */
@@ -37,20 +75,21 @@ body {
     justify-content: center;
     gap: 25px;
     padding: 15px;
-    background: #111;
+    background: var(--bg-nav);
+    transition: background 0.3s;
 }
 
 .menu a {
-    color: #fff;
+    color: var(--text-main);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
-    transition: 0.3s;
+    transition: color 0.3s;
 }
 
 .menu a:hover {
-    color: #f00;
+    color: var(--accent);
 }
 
 /* Hero Section */
@@ -67,21 +106,26 @@ body {
 .banner h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
+    color: #fff; /* Always white so it shows over the dark image */
 }
 
 .banner h1 span {
-    color: #f00;
+    color: var(--accent);
+}
+
+.banner p {
+    color: #fff; /* Always white */
 }
 
 .btn {
-    background: #f00;
-    color: #000;
+    background: var(--accent);
+    color: var(--btn-text);
     padding: 12px 30px;
     border: none;
     font-weight: bold;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform 0.3s, background 0.3s;
     margin-top: 20px;
 }
 
@@ -103,13 +147,14 @@ body {
 }
 
 .title span {
-    color: #f00;
+    color: var(--accent);
 }
 
 /* Mission */
 .mission {
-    text-align: center;
+    text-align: justify;
     font-size: 1.2rem;
+    line-height: 1.6;
     max-width: 800px;
     margin: 0 auto;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -124,12 +169,16 @@ body {
 }
 
 .person {
-    background: #111;
+    background: var(--bg-card);
     padding: 30px;
     border-radius: 5px;
     text-align: center;
-    transition: 0.3s;
-    border-bottom: 3px solid #f00;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    border-bottom: 3px solid var(--accent);
+}
+
+body.light-mode .person {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .person:hover {
@@ -141,12 +190,12 @@ body {
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #f00;
+    border: 3px solid var(--accent);
     margin-bottom: 20px;
 }
 
 .person h3 {
-    color: #f00;
+    color: var(--accent);
     margin-bottom: 10px;
     font-size: 1.5rem;
 }
@@ -162,10 +211,11 @@ body {
     width: 100%;
     padding: 15px;
     margin: 15px 0;
-    background: #111;
-    border: 1px solid #333;
-    color: #fff;
+    background: var(--bg-card);
+    border: 1px solid var(--input-border);
+    color: var(--text-main);
     font-size: 1rem;
+    transition: background 0.3s, color 0.3s, border 0.3s;
 }
 
 .form textarea {
@@ -174,10 +224,11 @@ body {
 
 /* Footer */
 .bottom {
-    background: #111;
+    background: var(--bg-nav);
     text-align: center;
     padding: 30px;
-    border-top: 2px solid #f00;
+    border-top: 2px solid var(--accent);
+    transition: background 0.3s;
 }
 
 .social {
@@ -188,11 +239,11 @@ body {
 }
 
 .social a {
-    color: #fff;
+    color: var(--text-main);
     font-size: 1.5rem;
-    transition: 0.3s;
+    transition: color 0.3s;
 }
 
 .social a:hover {
-    color: #f00;
+    color: var(--accent);
 }
