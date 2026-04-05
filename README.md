@@ -11,10 +11,15 @@ A modern and responsive landing page for Alex Gym. This project is built to show
 
 ## Project Structure
 
-- `Alex Gym.html`: The main document structuring the webpage content.
-- `styles.css`: Stylesheet governing layout, colors, typography, and visual design.
-- `script.js`: Interactive JavaScript code controlling user experience (scrolling, button events, and form verification).
-- `website_photos/`: Directory housing all the images of gym trainers and success stories.
+- `client/`: Contains the frontend assets.
+  - `Alex Gym.html`: The main document structuring the webpage content.
+  - `styles.css`: Stylesheet governing layout, colors, typography, and visual design.
+  - `script.js`: Interactive JavaScript code controlling user experience (scrolling, button events, and form verification).
+  - `website_photos/`: Directory housing all the images of gym trainers and success stories.
+- `server/`: Contains the backend API.
+  - `server.js`: The Express server that handles incoming API requests.
+  - `leads.json`: A local JSON file used to store contact form submissions.
+  - `package.json`: Node.js dependencies and project metadata.
 
 ## Technologies Used
 
@@ -22,6 +27,27 @@ A modern and responsive landing page for Alex Gym. This project is built to show
 - CSS3
 - JavaScript (Vanilla)
 - FontAwesome (Icons)
+- Node.js & Express (Backend Server)
+- File System (Local JSON storage)
+
+## Getting Started
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) installed on your machine.
+
+### Running the Project
+
+1. **Start the Backend Server:**
+   Navigate into the `server` directory, install dependencies, and start the server.
+   ```bash
+   cd server
+   npm install
+   node server.js
+   ```
+   The backend API will run on `http://localhost:3000`.
+
+2. **Open the Frontend:**
+   You can open `client/Alex Gym.html` directly in your web browser, or use a tool like Live Server in VS Code to run it locally. Contact form submissions will be sent to the backend and saved in `server/leads.json`.
 
 ---
 
